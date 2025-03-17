@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joshua & Her's Wedding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/ScrollTrigger.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <!-- Add Lottie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
+    <!-- Add particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- Add GSAP plugins -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/CustomEase.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.0/CustomWiggle.min.js"></script>
+    <!-- Add Anime.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <!-- Add Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
+    <!-- Modal Functions -->
+    <script>
+        // Initialize Lottie animation
+        let lottieAnimation;
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Lottie with a simpler success animation
+            lottieAnimation = lottie.loadAnimation({
+                container: document.getElementById('lottieContainer'),
+                renderer: 'svg',
+                loop: true,
+                autoplay: true,
+                path: 'https://assets2.lottiefiles.com/packages/lf20_s2lryxtd.json'
+            });
+            
+            // Initialize particles.js with simpler config
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 40 },
+                    color: { value: ['#FF69B4', '#9370DB'] },
+                    shape: { type: 'circle' },
+                    opacity: { value: 0.3 },
+                    size: { value: 2 },
+                    move: {
+                        enable: true,
+                        speed: 1,
+                        direction: 'none',
+                        random: true,
+                        out_mode: 'out'
+                    }
+                }
+            });
+            
+            // Check for success parameter in URL
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('rsvp') === 'success') {
+                setTimeout(showModal, 500);
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
+            // Add escape key listener
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeModal();
+                }
+            });
+        });
+
+        function createConfetti() {
+            const colors = ['#FF69B4', '#9370DB', '#FFB6C1'];
+            for (let i = 0; i < 30; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                document.querySelector('#successModal').appendChild(confetti);
+                
+                anime({
+                    targets: confetti,
+                    top: ['0%', '100%'],
+                    left: [confetti.style.left, parseInt(confetti.style.left) + (Math.random() * 100 - 50) + 'vw'],
+                    rotate: Math.random() * 360 * (Math.random() < 0.5 ? -1 : 1),
+                    duration: anime.random(3000, 5000),
+                    easing: 'easeOutCirc',
+                    complete: () => confetti.remove()
+                });
+            }
+        }
+
+        function showModal() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            if (modal && modalContent) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                
+                // GSAP animation timeline
+                const tl = gsap.timeline();
+                
+                tl.to(modal, {
+                    duration: 0.3,
+                    opacity: 1,
+                    ease: 'power2.out'
+                })
+                .to(modalContent, {
+                    duration: 0.5,
+                    scale: 1,
+                    opacity: 1,
+                    ease: 'back.out(1.7)',
+                    onComplete: () => {
+                        createConfetti();
+                    }
+                })
+                .from('#lottieContainer', {
+                    duration: 0.5,
+                    y: 30,
+                    opacity: 0,
+                    ease: 'back.out(1.7)'
+                }, '-=0.3')
+                .from('h3, p', {
+                    duration: 0.5,
+                    y: 20,
+                    opacity: 0,
+                    stagger: 0.1,
+                    ease: 'power3.out'
+                }, '-=0.3')
+                .from('button', {
+                    duration: 0.5,
+                    y: 20,
+                    opacity: 0,
+                    ease: 'power3.out'
+                }, '-=0.3');
+                
+                // Start Lottie animation
+                if (lottieAnimation) {
+                    lottieAnimation.play();
+                }
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('successModal');
+            const modalContent = document.getElementById('modalContent');
+            
+            if (modal && modalContent) {
+                gsap.to(modalContent, {
+                    duration: 0.3,
+                    scale: 0.95,
+                    opacity: 0,
+                    ease: 'power2.in',
+                    onComplete: () => {
+                        modal.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                        if (lottieAnimation) {
+                            lottieAnimation.stop();
+                        }
+                        // Remove all confetti
+                        document.querySelectorAll('.confetti').forEach(el => el.remove());
+                    }
+                });
+            }
+        }
+    </script>
+    
+    <style>
+        .font-cormorant { font-family: 'Cormorant Garamond', serif; }
+        .font-greatvibes { font-family: 'Great Vibes', cursive; }
+        
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .floating {
+            animation: floating 3s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); }
+        }
+
+        .timeline-img {
+            transition: transform 0.3s ease;
+        }
+
+        .timeline-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .curved-text {
+            animation: curveFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes curveFloat {
+            0%, 100% { transform: rotate(-3deg); }
+            50% { transform: rotate(3deg); }
+        }
+
+        .hearts {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        .modal {
+            transition: opacity 0.25s ease;
+        }
+
+        .modal-active {
+            overflow-y: visible !important;
+            overflow-x: hidden !important;
+        }
+
+        .event-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .event-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
+        }
+
+        .event-card:hover::before {
+            opacity: 1;
+        }
+
+        .event-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        .dress-code-modal {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-scrolled .nav-link {
+            color: #1a1a1a;
+        }
+
+        .nav-scrolled .nav-link:hover {
+            color: #4a5568;
+        }
+
+        .nav-transparent {
+            background: rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-transparent .nav-link {
+            color: white;
+        }
+
+        .nav-transparent .nav-link:hover {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .nav-link {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: currentColor;
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 80%;
+        }
+
+        .gallery-img {
+            height: 500px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 1rem;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-img:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-caption {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .splide__slide:hover .gallery-caption {
+            transform: translateY(-5px);
+        }
+
+        /* New Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scale-in {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.6s ease;
+        }
+
+        .scale-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Enhanced Button Styles */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        /* Enhanced Card Styles */
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Loading Animation */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Add modern modal styles */
+        .modern-modal {
+            backdrop-filter: blur(8px);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        .success-animation {
+            transform-origin: center;
+        }
+
+        .modal-overlay {
+            backdrop-filter: blur(8px);
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #f0f;
+            border-radius: 50%;
+        }
+
+        .modal-content {
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .modal-content.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .success-ring {
+            stroke-dasharray: 180;
+            stroke-dashoffset: 180;
+            transform-origin: center;
+        }
+
+        .success-check {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+        }
+
+        @keyframes drawRing {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes drawCheck {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes scaleSuccess {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .gradient-border {
+            position: relative;
+            background: linear-gradient(to right, #ff6b6b, #4ecdc4);
+            padding: 3px;
+            border-radius: 24px;
+        }
+
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 24px;
+            padding: 3px;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b8ac, #ff6b6b);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            animation: borderRotate 4s linear infinite;
+        }
+
+        @keyframes borderRotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-[#faf9f6] overflow-x-hidden" 
+      x-data="{ 
+          countdown: { days: 0, hours: 0, minutes: 0, seconds: 0 },
+          showDressCode: false,
+          currentEvent: null,
+          isScrolled: false
+      }"
+      @scroll.window="isScrolled = (window.pageYOffset > 50)">
+    <div class="hearts" id="hearts"></div>
+
+    <!-- Loading Screen -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 transition-all duration-300" x-data="{ isScrolled: false }" @scroll.window="isScrolled = (window.pageYOffset > 50)">
+        <div class="w-full" :class="{ 'bg-white/95 shadow-lg': isScrolled, 'bg-black/20 backdrop-blur-sm': !isScrolled }">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <div class="flex items-center">
+                        <span class="font-greatvibes text-3xl" :class="{ 'text-gray-800': isScrolled, 'text-white': !isScrolled }">S & J</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-8">
+                            <a href="#home" class="nav-link" :class="{ 'text-gray-800 hover:text-gray-600': isScrolled, 'text-white hover:text-gray-200': !isScrolled }">Home</a>
+                            <a href="#date" class="nav-link" :class="{ 'text-gray-800 hover:text-gray-600': isScrolled, 'text-white hover:text-gray-200': !isScrolled }">Date</a>
+                            <a href="#story" class="nav-link" :class="{ 'text-gray-800 hover:text-gray-600': isScrolled, 'text-white hover:text-gray-200': !isScrolled }">Our Story</a>
+                            <a href="#events" class="nav-link" :class="{ 'text-gray-800 hover:text-gray-600': isScrolled, 'text-white hover:text-gray-200': !isScrolled }">Events</a>
+                            <a href="#gallery" class="nav-link" :class="{ 'text-gray-800 hover:text-gray-600': isScrolled, 'text-white hover:text-gray-200': !isScrolled }">Gallery</a>
+                            <a href="#rsvp" class="nav-link" :class="{ 'text-gray-800 hover:text-gray-600': isScrolled, 'text-white hover:text-gray-200': !isScrolled }">RSVP</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div id="home" class="min-h-screen flex items-center justify-center bg-cover bg-center relative parallax" 
+         style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
+        <div class="absolute inset-0 bg-black bg-opacity-20"></div>
+        <div class="relative text-center text-white" data-aos="fade-up">
+            <div class="curved-text mb-8">
+                <p class="font-cormorant text-xl tracking-[0.3em]">The Amoureternel of</p>
+            </div>
+            <h1 class="font-greatvibes text-7xl md:text-9xl mb-4 floating">Joshua & Her</h1>
+            <div class="mt-8 flex justify-center space-x-4 text-xl">
+                <div class="text-center">
+                    <span x-text="countdown.days" class="block text-4xl font-bold"></span>
+                    <span class="text-sm">DAYS</span>
+                </div>
+                <div class="text-center">
+                    <span x-text="countdown.hours" class="block text-4xl font-bold"></span>
+                    <span class="text-sm">HOURS</span>
+                </div>
+                <div class="text-center">
+                    <span x-text="countdown.minutes" class="block text-4xl font-bold"></span>
+                    <span class="text-sm">MINUTES</span>
+                </div>
+                <div class="text-center">
+                    <span x-text="countdown.seconds" class="block text-4xl font-bold"></span>
+                    <span class="text-sm">SECONDS</span>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 floating">
+            <a href="#date" class="text-white">
+                <i class="fas fa-chevron-down text-3xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Date Section -->
+    <section id="date" class="py-32 px-4 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <i class="fas fa-heart text-9xl absolute transform rotate-12" style="top: 10%; left: 10%;"></i>
+            <i class="fas fa-heart text-9xl absolute transform -rotate-12" style="bottom: 10%; right: 10%;"></i>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative" data-aos="fade-up">
+            <h2 class="font-greatvibes text-6xl md:text-7xl text-gray-800 mb-12">Save the Date</h2>
+            <div class="font-cormorant text-xl md:text-2xl text-gray-600 space-y-6">
+                <p class="text-3xl md:text-4xl text-gray-800 mb-4">December 15, 2024</p>
+                <div class="glass-effect p-8 rounded-lg shadow-xl">
+                    <p>at 4:00 in the afternoon</p>
+                    <div class="mt-6 space-y-2">
+                        <p class="text-2xl font-semibold">Eko Hotel & Suites</p>
+                        <p>1415 Adetokunbo Ademola Street</p>
+                        <p>Victoria Island, Lagos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section id="story" class="py-32 px-4 bg-white relative">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="font-greatvibes text-6xl md:text-7xl text-gray-800 text-center mb-16">Our Story</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="relative" data-aos="fade-right">
+                    <div class="timeline-img rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="First Meeting" class="w-full h-96 object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 bg-white p-4 rounded-lg shadow-lg">
+                        <p class="font-greatvibes text-3xl text-gray-800">First Meeting</p>
+                    </div>
+                </div>
+                <div class="font-cormorant text-xl text-gray-600 flex items-center" data-aos="fade-left">
+                    <p>We met at a local restaurant in Lekki, Lagos, where Joshua was having lunch with friends. 
+                       What started as a casual conversation turned into hours of talking, laughing, and 
+                       discovering how much we had in common.</p>
+                </div>
+                <div class="font-cormorant text-xl text-gray-600 flex items-center order-2 md:order-1" data-aos="fade-right">
+                    <p>Two years later, at the same spot where they first met, Joshua got down on one knee and asked Her to 
+                       spend the rest of their lives together. The Lagos sunset made the moment even more magical.</p>
+                </div>
+                <div class="relative order-1 md:order-2" data-aos="fade-left">
+                    <div class="timeline-img rounded-lg overflow-hidden shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="The Proposal" class="w-full h-96 object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -left-8 bg-white p-4 rounded-lg shadow-lg">
+                        <p class="font-greatvibes text-3xl text-gray-800">The Proposal</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section id="events" class="py-32 px-4 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-greatvibes text-6xl md:text-7xl text-gray-800 text-center mb-16">Celebrations</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Traditional Wedding Event -->
+                <div class="event-card bg-white rounded-xl overflow-hidden shadow-lg" 
+                     @click="showDressCode = true; currentEvent = 'traditional'"
+                     data-aos="fade-up"
+                     data-aos-delay="0">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1604422375312-16cb61623e47?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-greatvibes text-4xl text-gray-800 mb-2">Traditional Wedding</h3>
+                        <p class="font-cormorant text-xl text-gray-600 mb-4">10:00 AM - 4:00 PM</p>
+                        <button class="w-full bg-gradient-to-r from-orange-400 to-pink-500 text-white px-6 py-2 rounded-lg font-cormorant text-lg hover:opacity-90 transition-opacity">
+                            View Dress Code
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Engagement Party -->
+                <div class="event-card bg-white rounded-xl overflow-hidden shadow-lg" 
+                     @click="showDressCode = true; currentEvent = 'engagement'"
+                     data-aos="fade-up"
+                     data-aos-delay="100">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1575037614876-c38a4d44f5ed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-greatvibes text-4xl text-gray-800 mb-2">Engagement Party</h3>
+                        <p class="font-cormorant text-xl text-gray-600 mb-4">6:00 PM - 12:00 AM</p>
+                        <button class="w-full bg-gradient-to-r from-purple-400 to-blue-500 text-white px-6 py-2 rounded-lg font-cormorant text-lg hover:opacity-90 transition-opacity">
+                            View Dress Code
+                        </button>
+                    </div>
+                </div>
+
+                <!-- White Wedding -->
+                <div class="event-card bg-white rounded-xl overflow-hidden shadow-lg" 
+                     @click="showDressCode = true; currentEvent = 'wedding'"
+                     data-aos="fade-up"
+                     data-aos-delay="200">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-greatvibes text-4xl text-gray-800 mb-2">White Wedding</h3>
+                        <p class="font-cormorant text-xl text-gray-600 mb-4">4:00 PM - 12:00 AM</p>
+                        <button class="w-full bg-gradient-to-r from-pink-400 to-red-500 text-white px-6 py-2 rounded-lg font-cormorant text-lg hover:opacity-90 transition-opacity">
+                            View Dress Code
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dress Code Modal -->
+        <div class="modal fixed inset-0 w-full h-full outline-none overflow-x-hidden overflow-y-auto z-50"
+             x-show="showDressCode"
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             x-transition:leave="transition ease-in duration-200"
+             x-transition:leave-start="opacity-100"
+             x-transition:leave-end="opacity-0">
+            <div class="relative w-auto my-6 mx-auto max-w-3xl"
+                 @click.away="showDressCode = false">
+                <div class="dress-code-modal border-0 rounded-lg shadow-lg relative flex flex-col w-full outline-none focus:outline-none">
+                    <div class="relative p-6 flex-auto">
+                        <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 transition-colors"
+                                @click="showDressCode = false">
+                            <i class="fas fa-times text-2xl"></i>
+                        </button>
+                        
+                        <!-- Traditional Wedding Dress Code -->
+                        <div x-show="currentEvent === 'traditional'" class="space-y-6">
+                            <h3 class="font-greatvibes text-5xl text-center text-gray-800 mb-8">Traditional Wedding Dress Code</h3>
+                            <div class="font-cormorant text-xl text-gray-600 space-y-4">
+                                <p class="text-2xl font-semibold text-gray-800">Traditional Nigerian Attire</p>
+                                <p>Ladies can wear their most elegant traditional outfits (Gele, Iro, and Buba) and gentlemen can wear their finest Agbada or traditional attire.</p>
+                                <div class="grid grid-cols-2 gap-4 mt-6">
+                                    <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                         alt="Traditional Outfit Example" class="rounded-lg shadow-md">
+                                    <img src="https://images.unsplash.com/photo-1558618666-f1089f4f0ac1?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                         alt="Traditional Outfit Example" class="rounded-lg shadow-md">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Engagement Party Dress Code -->
+                        <div x-show="currentEvent === 'engagement'" class="space-y-6">
+                            <h3 class="font-greatvibes text-5xl text-center text-gray-800 mb-8">Engagement Party Dress Code</h3>
+                            <div class="font-cormorant text-xl text-gray-600 space-y-4">
+                                <p class="text-2xl font-semibold text-gray-800">Smart Casual</p>
+                                <p>Ladies can wear elegant dresses or traditional outfits, and gentlemen can wear smart casual attire or traditional wear.</p>
+                                <div class="grid grid-cols-2 gap-4 mt-6">
+                                    <img src="https://images.unsplash.com/photo-1595777457583-95e059d581b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                         alt="Engagement Outfit Example" class="rounded-lg shadow-md">
+                                    <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                         alt="Engagement Outfit Example" class="rounded-lg shadow-md">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- White Wedding Dress Code -->
+                        <div x-show="currentEvent === 'wedding'" class="space-y-6">
+                            <h3 class="font-greatvibes text-5xl text-center text-gray-800 mb-8">White Wedding Dress Code</h3>
+                            <div class="font-cormorant text-xl text-gray-600 space-y-4">
+                                <p class="text-2xl font-semibold text-gray-800">Formal Attire</p>
+                                <p>Ladies can wear elegant formal dresses or traditional outfits, and gentlemen can wear suits or traditional formal wear.</p>
+                                <div class="grid grid-cols-2 gap-4 mt-6">
+                                    <img src="https://images.unsplash.com/photo-1594387293696-6aa4e0099b3a?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                         alt="Wedding Outfit Example" class="rounded-lg shadow-md">
+                                    <img src="https://images.unsplash.com/photo-1597983073453-ef06cfc2240e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" 
+                                         alt="Wedding Outfit Example" class="rounded-lg shadow-md">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-32 px-4 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-greatvibes text-6xl md:text-7xl text-gray-800 text-center mb-16">Our Moments</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-[400px] object-cover transform transition-transform duration-500 group-hover:scale-110" 
+                         alt="Our First Look">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                        <p class="font-cormorant text-xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Our First Look</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-[400px] object-cover transform transition-transform duration-500 group-hover:scale-110" 
+                         alt="The Proposal">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                        <p class="font-cormorant text-xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">The Proposal</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-[400px] object-cover transform transition-transform duration-500 group-hover:scale-110" 
+                         alt="Engagement Party">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                        <p class="font-cormorant text-xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Engagement Party</p>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-lg shadow-lg card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                         class="w-full h-[400px] object-cover transform transition-transform duration-500 group-hover:scale-110" 
+                         alt="Pre-Wedding Shoot">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end p-6">
+                        <p class="font-cormorant text-xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">Pre-Wedding Shoot</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section id="map" class="py-32 px-4">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-greatvibes text-6xl md:text-7xl text-gray-800 text-center mb-16">Venue Location</h2>
+            <div class="map-container h-[500px]" data-aos="zoom-in">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7999999999997!2d3.4226!3d6.4550!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b5147e70b0f1d%3A0xdc9e87a367c3d9cb!2sEko%20Hotel%20%26%20Suites!5e0!3m2!1sen!2sng!4v1644839365051!5m2!1sen!2sng"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy">
+                </iframe>
+            </div>
+            <div class="mt-8 text-center">
+                <p class="font-cormorant text-xl text-gray-600">Eko Hotel & Suites</p>
+                <p class="font-cormorant text-gray-600">1415 Adetokunbo Ademola Street, Victoria Island, Lagos</p>
+                <a href="https://goo.gl/maps/xxxxx" target="_blank" 
+                   class="inline-block mt-4 bg-gray-800 text-white px-6 py-2 rounded-lg font-cormorant hover:bg-gray-700 transition-colors">
+                    Get Directions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section id="rsvp" class="py-32 px-4 relative">
+        <div class="absolute inset-0 bg-cover bg-center opacity-10 parallax"
+             style="background-image: url('https://images.unsplash.com/photo-1469371670807-013ccf25f16a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative" data-aos="fade-up">
+            <h2 class="font-greatvibes text-6xl md:text-7xl text-gray-800 mb-12">RSVP</h2>
+            <form action="admin/process_rsvp.php" method="POST" class="max-w-md mx-auto space-y-6 glass-effect p-8 rounded-lg">
+                <div class="space-y-4">
+                    <div class="relative">
+                        <input type="text" name="name" placeholder="Your Name" required
+                               class="w-full px-4 py-3 bg-white bg-opacity-20 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 font-cormorant text-lg">
+                        <i class="fas fa-user absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <div class="relative">
+                        <input type="email" name="email" placeholder="Your Email" required
+                               class="w-full px-4 py-3 bg-white bg-opacity-20 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 font-cormorant text-lg">
+                        <i class="fas fa-envelope absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                    <div class="relative">
+                        <select name="guests" required class="w-full px-4 py-3 bg-white bg-opacity-20 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-200 font-cormorant text-lg appearance-none">
+                            <option value="">Number of Guests</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                        </select>
+                        <i class="fas fa-users absolute right-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                    </div>
+                </div>
+                <button type="submit" 
+                        class="group relative w-full bg-gray-800 text-white px-8 py-3 rounded-lg font-cormorant text-xl overflow-hidden transition-all duration-300 transform hover:scale-105">
+                    <span class="relative z-10">Send RSVP</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 px-4 bg-gray-50">
+        <div class="text-center font-cormorant text-gray-600">
+            <p class="mb-4">With love,</p>
+            <p class="font-greatvibes text-4xl text-gray-800 mb-8 curved-text">Joshua & Her</p>
+            <div class="flex justify-center space-x-6 text-gray-400">
+                <a href="#" class="hover:text-gray-600 transition-colors duration-300">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-gray-600 transition-colors duration-300">
+                    <i class="fab fa-facebook text-2xl"></i>
+                </a>
+                <a href="#" class="hover:text-gray-600 transition-colors duration-300">
+                    <i class="fab fa-twitter text-2xl"></i>
+                </a>
+            </div>
+            <p class="mt-8 text-sm">&copy; 2024 Joshua & Her. All rights reserved.</p>
+            
+            <!-- Test Button (Remove in production) -->
+            <button onclick="showModal()" class="mt-4 text-xs text-gray-400 hover:text-gray-600">Test Modal</button>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 z-50 hidden overflow-y-auto overflow-x-hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50 backdrop-blur-sm transition-opacity duration-300" onclick="closeModal()"></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl max-w-md w-full p-8 transform transition-all duration-500 scale-95 opacity-0 shadow-2xl" id="modalContent">
+                <div class="text-center relative">
+                    <!-- Close button -->
+                    <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors">
+                        <i class="fas fa-times text-2xl"></i>
+                    </button>
+                    
+                    <!-- Success Animation Container -->
+                    <div class="mb-8">
+                        <div id="lottieContainer" class="w-32 h-32 mx-auto"></div>
+                    </div>
+                    
+                    <!-- Particles Container -->
+                    <div id="particles-js" class="absolute inset-0 pointer-events-none"></div>
+                    
+                    <h3 class="font-greatvibes text-4xl text-gray-800 mb-4">Thank You!</h3>
+                    <div class="mt-3">
+                        <p class="font-cormorant text-xl text-gray-600 leading-relaxed">
+                            Your RSVP has been successfully submitted. We look forward to celebrating with you!
+                        </p>
+                    </div>
+                    <div class="mt-8">
+                        <button type="button" onclick="closeModal()" 
+                                class="inline-flex justify-center px-8 py-3 text-lg font-medium text-white bg-gray-800 border border-transparent rounded-lg hover:bg-gray-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-gray-500 transition-all duration-300 transform hover:scale-105 font-cormorant">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Animate timeline images
+        gsap.utils.toArray('.timeline-img').forEach(img => {
+            gsap.from(img, {
+                scrollTrigger: {
+                    trigger: img,
+                    start: 'top center',
+                    toggleActions: 'play none none reverse'
+                },
+                opacity: 0,
+                y: 100,
+                duration: 1.5,
+                ease: 'power3.out'
+            });
+        });
+
+        // Enhanced Scroll Animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.fade-in-up, .scale-in, .slide-in-left, .slide-in-right');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementBottom = element.getBoundingClientRect().bottom;
+                const isVisible = (elementTop < window.innerHeight) && (elementBottom >= 0);
+                if (isVisible) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            const loading = document.querySelector('.loading');
+            setTimeout(() => {
+                loading.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const weddingDate = new Date('2024-12-15T16:00:00').getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.querySelector('[x-data]').__x.$data.countdown = {
+                days: days,
+                hours: hours,
+                minutes: minutes,
+                seconds: seconds
+            };
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Enhanced Floating Hearts Animation
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('absolute');
+            heart.innerHTML = '<i class="fas fa-heart text-pink-200 opacity-50"></i>';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+            
+            document.getElementById('hearts').appendChild(heart);
+
+            gsap.to(heart, {
+                y: -window.innerHeight,
+                rotation: Math.random() * 360,
+                opacity: 0,
+                duration: Math.random() * 3 + 2,
+                ease: 'power1.out',
+                onComplete: () => heart.remove()
+            });
+        }
+
+        setInterval(createHeart, 300);
+
+        // Smooth Scroll with Enhanced Animation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const headerOffset = 80;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Parallax Effect
+        window.addEventListener('scroll', () => {
+            const parallaxElements = document.querySelectorAll('.parallax');
+            parallaxElements.forEach(element => {
+                const speed = 0.5;
+                const yPos = -(window.pageYOffset * speed);
+                element.style.backgroundPositionY = yPos + 'px';
+            });
+        });
+    </script>
+</body>
+</html> 
