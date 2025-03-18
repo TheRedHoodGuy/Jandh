@@ -1,0 +1,790 @@
+[2025-03-18 23:18:44] 54 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:18:55] 0 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:19:06] 0 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:20:01] 0 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:20:18] 0 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:20:50] 54 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:24:14] 54 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:42:06] 0 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:42:07] 0 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:42:20] 0 of 51 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:42:35] 54 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:43:01] 53 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:43:08] 53 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:43:58] 0 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:44:20] 53 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:44:55] 53 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:45:10] 53 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+[2025-03-18 23:45:17] 0 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_date_text}}
+  - {{date_time_text}}
+  - {{date_title}}
+  - {{date_venue_address1}}
+  - {{date_venue_address2}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_time}}
+  - {{events_engagement_title}}
+  - {{events_title}}
+  - {{events_traditional_image}}
+  - {{events_traditional_time}}
+  - {{events_traditional_title}}
+  - {{events_wedding_image}}
+  - {{events_wedding_time}}
+  - {{events_wedding_title}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_caption1}}
+  - {{gallery_caption2}}
+  - {{gallery_caption3}}
+  - {{gallery_caption4}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{gallery_title}}
+  - {{hero_background_image}}
+  - {{hero_subtitle}}
+  - {{hero_title}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_title}}
+  - {{map_venue_address}}
+  - {{map_venue_name}}
+  - {{rsvp_background_image}}
+  - {{rsvp_title}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_first_meeting_title}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}
+  - {{story_title}}
+[2025-03-18 23:48:08] 53 of 54 replacements made.
+Missing placeholders:
+  - {{background-image: url('{{hero_background_image}}'}}
+  - {{background-image: url('{{hero_background_image}}')}}
+  - {{background-image: url('{{story_first_meeting_image}}'}}
+  - {{background-image: url('{{story_first_meeting_image}}')}}
+  - {{background-image: url('{{story_proposal_image}}'}}
+  - {{background-image: url('{{story_proposal_image}}')}}
+  - {{date_venue_name}}
+  - {{events_engagement_image}}
+  - {{events_engagement_title}}
+  - {{events_traditional_image}}
+  - {{events_wedding_image}}
+  - {{footer_copyright}}
+  - {{footer_facebook_link}}
+  - {{footer_instagram_link}}
+  - {{footer_signature}}
+  - {{footer_twitter_link}}
+  - {{gallery_image1}}
+  - {{gallery_image2}}
+  - {{gallery_image3}}
+  - {{gallery_image4}}
+  - {{hero_wedding_date}}
+  - {{map_directions_link}}
+  - {{map_map_embed}}
+  - {{map_venue_address}}
+  - {{rsvp_background_image}}
+  - {{story_first_meeting_image}}
+  - {{story_first_meeting_text}}
+  - {{story_proposal_image}}
+  - {{story_proposal_text}}
+  - {{story_proposal_title}}

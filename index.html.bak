@@ -620,11 +620,11 @@
 
     <!-- Hero Section -->
     <div id="home" class="min-h-screen flex items-center justify-center bg-cover bg-center relative parallax" 
-         style="background-image: url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80');">
+         style="background-image: url('https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');">
         <div class="absolute inset-0 bg-black bg-opacity-20"></div>
         <div class="relative text-center text-white" data-aos="fade-up">
             <div class="curved-text mb-8">
-                <p class="font-cormorant text-xl tracking-[0.3em]">The Amoureternel of </p>
+                <p class="font-cormorant text-xl tracking-[0.3em]">The Amoureternel of</p>
             </div>
             <h1 class="font-greatvibes text-7xl md:text-9xl mb-4 floating">Joshua & Her</h1>
             <div class="mt-8 flex justify-center space-x-4 text-xl">
@@ -682,7 +682,11 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                 <div class="relative" data-aos="fade-right">
                     <div class="timeline-img rounded-lg overflow-hidden shadow-xl">
-                        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"First Meeting</p>
+                        <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                             alt="First Meeting" class="w-full h-96 object-cover">
+                    </div>
+                    <div class="absolute -bottom-8 -right-8 bg-white p-4 rounded-lg shadow-lg">
+                        <p class="font-greatvibes text-3xl text-gray-800">First Meeting</p>
                     </div>
                 </div>
                 <div class="font-cormorant text-xl text-gray-600 flex items-center" data-aos="fade-left">

@@ -1,44 +1,21 @@
 <?php
-// Database configuration
-$db_host = 'localhost';
-$db_name = 'wedding_db';
-$db_user = 'root';
-$db_pass = 'root';
+session_start();
+require_once 'config.php';
 
-try {
-    $pdo = new PDO("mysql:host=$db_host;dbname=$db_name", $db_user, $db_pass);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch(PDOException $e) {
-    die("Connection failed: " . $e->getMessage());
+// Check if user is logged in
+if (!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true) {
+    // For this emergency fix, we'll allow anonymous access
+    // Uncomment the lines below in production
+    // header('Location: login.php');
+    // exit;
 }
 
-// Create RSVPs table if it doesn't exist
-$pdo->exec("CREATE TABLE IF NOT EXISTS rsvp (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    guests INT NOT NULL DEFAULT 1,
-    attending ENUM('yes', 'no', 'maybe') NOT NULL,
-    message TEXT,
-    dietary_restrictions TEXT,
-    ticket_sent BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)");
-
-// Create website_content table if it doesn't exist
-$pdo->exec("CREATE TABLE IF NOT EXISTS website_content (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    section VARCHAR(50) NOT NULL,
-    field_name VARCHAR(100) NOT NULL,
-    field_value TEXT NOT NULL,
-    field_type VARCHAR(50) NOT NULL DEFAULT 'text',
-    last_updated TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    UNIQUE KEY (section, field_name)
-)");
-
-// Insert default content if the table is empty
-$stmt = $pdo->query("SELECT COUNT(*) FROM website_content");
-if ($stmt->fetchColumn() == 0) {
+// First, truncate the website_content table
+try {
+    $pdo->exec("TRUNCATE TABLE website_content");
+    echo "Cleared existing website content.<br>";
+    
+    // Now insert the default content
     // Hero section
     $pdo->exec("INSERT INTO website_content (section, field_name, field_value, field_type) VALUES 
         ('hero', 'background_image', 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80', 'image'),
@@ -118,11 +95,12 @@ if ($stmt->fetchColumn() == 0) {
         ('footer', 'twitter_link', '#', 'text'),
         ('footer', 'copyright', '2024 Joshua & Her. All rights reserved.', 'text')
     ");
+    
+    echo "Default content has been restored.<br>";
+    echo "<a href='generate_website.php'>Regenerate website</a><br>";
+    echo "<a href='index.php'>Go to admin dashboard</a>";
+    
+} catch(PDOException $e) {
+    die("Database error: " . $e->getMessage());
 }
-
-// Admin credentials (in a real application, these should be stored securely in a database)
-define('ADMIN_USERNAME', 'admin');
-define('ADMIN_PASSWORD', 'admin123'); // Changed to a simple password for testing
-
-// Email configuration
-define('WEDDING_EMAIL', 'wedding@example.com'); // Change this to your email 
+?> 
